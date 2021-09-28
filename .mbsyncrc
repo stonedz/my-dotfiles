@@ -1,0 +1,22 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User paolo.fagni@gmail.com
+PassCmd "gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/.gmail-app-pass.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Subfolders Verbatim
+Path ~/Mail-gmail/
+Inbox ~/Mail-gmail/Inbox
+
+Channel gmail
+Near :gmail-remote:
+Far :gmail-local:
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" "[Gmail]/Trash"
+Create Both
+Expunge Both
+#SyncState *
