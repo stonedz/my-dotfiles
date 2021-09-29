@@ -1,0 +1,1 @@
+/home/stonedz/work/neovim-win-config/init.vim
